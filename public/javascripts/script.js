@@ -1,9 +1,10 @@
+//open navigation overlay
 function openNav() {
   const nav = document.getElementById("myNav");
   nav.classList.add("open");
   document.querySelector(".menu").style.display = "none";
 }
-
+//close navigation overlay
 function closeNav() {
   const nav = document.getElementById("myNav");
   nav.classList.remove("open");
@@ -18,7 +19,7 @@ function escapeHtml(text) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
-
+//comment form listener
 document.addEventListener('DOMContentLoaded', function() {
   const commentForm = document.getElementById('comment-form');
   const commentsList = document.getElementById('comments-List');
