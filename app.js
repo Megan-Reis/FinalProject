@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const createError = require('http-errors');
 const { dbMiddleware} = require('./bin/db');
 
 
@@ -16,6 +17,7 @@ app.set('view engine', 'pug');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname)));
 app.use(dbMiddleware);
 app.use('/', indexRouter);
 //add more routes here
