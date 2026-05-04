@@ -1,6 +1,26 @@
 var express = require('express');
 var router = express.Router();
 
+function sanitizeHtml(value){
+  return String( value || '' )
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/&/g, '&amp;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#39;')
+  .replace(/\r\n|\r|\n/g, '&#x2F;');
+}
+
+function formatTimestamp(value){
+  const date = new Date(value);
+  return date.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
 /* GET home page. */
 router.get('/', function(req, res, next){
   try {

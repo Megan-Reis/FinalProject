@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>DONUTS - Menu</title>
+        <title>DONUTS - Contact</title>
         <link rel="stylesheet" href="/stylesheets/style.css">
         <script src="/javascripts/script.js"></script>
+        
     </head>
     <body> 
         <main background-image="/images/donuts.jpeg">
             <img src="/images/donut-removebg.png" alt="donutlogo" class="logo" >
-            <div id="myNav" class ="overlay">
+            <div id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
                     <a href="/">Home</a>
@@ -18,13 +19,21 @@
                 </div>
             </div>
         <span onclick="openNav()" class="menu">More</span>
-        <section>
-            <form class="comment-form">
+       <section>
+            <form id="comment-form" class="comment-form">
                 <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required maxlength="100">
                 <label for="comment">Comment:</label>
-                <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+                <textarea id="comment" name="comment" rows="4" cols="50" required maxlength="1000"></textarea>
                 <button type="submit">Submit</button>   
             </form>
+            <section class="comments">
+                <h2>Comments</h2>
+                <div id="comments-List" class="comments-list"></div>
+                <footer class="comments-footer">
+                    <button id="loadMore" type="button" class="load-more">MORE</button>
+                </footer>
+            </section>
         </section>
         </main>
     </body>

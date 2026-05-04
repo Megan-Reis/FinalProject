@@ -10,6 +10,7 @@
 }
 body {
   background-color: #10291D;
+  font-family: 'Montserrat Light';
 }
 
 a {
@@ -141,5 +142,7 @@ main {
     top:15px;
     right:35px;
   }
+
+
 
 }
